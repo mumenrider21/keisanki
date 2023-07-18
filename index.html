@@ -4,58 +4,83 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>bootstrap!</title>
-    
+
     <link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
-    <href rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/
-    font/bootstrap-icons.css">
+    <href rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/custom.css">
 
 </head>
 <body>
     <header>
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">
-					<img src="./images/logo.png">PiyoTemplate
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+				<a class="navbar-brand">
+					<img src="./images/logo.png">Original 計算App
 				</a>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main class="main">
+		<div class="container">
+
+			<h3 class="text-center">消費税の計算電卓</h3>
+			<div class="card card mb-3" style="max-width: 40rem;">
+				<div class="card-body">
+					<div class="text-center">
+						<p class="text-inner"><span>半角数字で</span>『本体価格』『消費税率』を以下に入力してください。</p>
+						<input type="number" id="num1" value="0">　✖️　
+						<input type="number" id="num2" value="0">　=　
+						<span class="result">結果</span><span>（円）</span><br>
+						<button type="button" class="btn btn-danger" onclick="onClick();">消費税を計算する</button>
+					</div>
+				</div>
 			</div>
-		</nav>
-	</header>
+
+			<div class="card_2 card mb-3" style="max-width: 50rem;">
+				<div class="card-body_2">
+					<p class="title">　〜　消費税の計算方法　〜</p>
+					<p class="inner">　・消費税は ［税抜き価格（本体価格） × 消費税率］で計算できます。<br>
+						　・消費税率10%で計算するときは0.1をかけます。8%で計算するときは0.08をかけます。<br>
+						　・税込み価格（支払い価格）は ［税抜き価格 + 消費税］で計算できます。<br>
+						　・たとえば、¥2,000の商品（消費税率10%）を買うとき、消費税は［2000 x 0.1］で¥200になります。<br>
+						　税込み価格（支払い価格）は［2000 + 200］で¥2,200になります。
+					</p>
+				</div>
+			</div>
+
+			<div class="card_2 card mb-3" style="max-width: 50rem;">
+				<div class="card-body_2">
+					<p class="title">　〜　税込み価格から税抜き価格を計算　〜</p>
+					<p class="inner">　・税込み価格から税抜き価格を算出するには［税込み価格 ÷ (消費税率 + 1)］という計算をします。<br>
+						　・消費税率10%の商品なら ［税込み価格 ÷ 1.1］で税抜き価格が分かります。<br>
+						　・消費税率8%の商品なら ［税込み価格 ÷ 1.08］で税抜き価格が分かります。<br>
+						　・たとえば、消費税10%・税込み価格¥1,100の商品であれば［1100 ÷ 1.1］とします。<br>
+						これで税抜き価格は¥1,000ということが分かります。
+					</p>
+				</div>
+			</div>
+
+			<div class="card_2 card mb-3" style="max-width: 50rem;">
+				<div class="card-body_2">
+					<p class="title">　〜　消費税の端数はどうする？　〜</p>
+					<p class="inner">　・消費税を計算したときに1円未満の小数になることがあります。<br>
+						　たとえば、10円の食品の0.08%は0.8円です。<br>
+						　・国税庁によると「1円未満の端数（はすう）が生じた場合は、四捨五入しても、切捨てても、<br>
+						　切上げても良い」とされています。つまり、事業者に委ねられているというわけです。<br>
+						　・この消費税計算ツールでは、1円未満の小数は切り捨てしています。
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</main>
 
 
-
-    <main>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-        <h3 class="text-center">計算機(消費税も決められるよ)</h3>
-        <div class="text-center">
-<input type="number" id="num1" value="0"> +
-<input type="number" id="num2" value="0"> （消費税）
-<input type="number" id="num3" value="0">=
-<span class="result ">結果</span>
-<br>
-<button class="button text-primary" type="button" onclick="onClick();">足算します</button>
-</div>
-
-</main>
-<footer>
-    <div class="container text-muted py-5">
-        <p class="float-end mb-1"><a href="#">Back to top</a></p>
-        <p class="mb-1">&copy; Bootstrap</p>
-        <p class="mb-0">
-            <a href="https://getbootstrap.jp" target="_blank">Bootstap公式サイト</a>や
-            <a href="https://getbootstrap.jp/docs/5.0/getting-started/introduction/" target="_blank">スタートガイド</a>、
-            <a href="https://icons.getbootstrap.com/" target="_blank">アイコン</a>を活用しましょう。
-        </p>
-    </div>
-</footer>
-
-    <script src="./libs/jquery/jquery-3.6.1.min.js"></script>
-    <script src="./libs/bootstrap/bootstrap.min.js"></script>
-    <script src="./main.js"></script>
+	<script src="./libs/jquery/jquery-3.6.1.min.js"></script>
+	<script src="./libs/bootstrap/bootstrap.min.js"></script>
+	<script src="./main.js"></script>
 </body>
 </html>
